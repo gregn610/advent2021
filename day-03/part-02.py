@@ -23,7 +23,7 @@ def load(file):
 
 
 def process(data):
-    bits = max([len(i.rstrip()) for i in data])
+    bits = max(int(x, 2).bit_length() for x in data)
     arr = [int(ln, 2) for ln in data]
     return arr, bits
 
